@@ -11,6 +11,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.3.1'
 gem 'listen', '~> 3.0.5'
+gem 'ffi', '1.11.1'
+
 
 
 group :development, :test do
@@ -28,7 +30,7 @@ group :development do
 end
 
 group :production do 
-  gem 'pg' 
+  gem 'pg', '~> 1.1.4'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
