@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.3.1'
 gem 'listen', '~> 3.0.5'
 gem 'ffi', '1.11.1'
+gem 'devise'
 
 
 
