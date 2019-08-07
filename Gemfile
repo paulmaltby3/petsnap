@@ -13,7 +13,8 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'listen', '~> 3.0.5'
 gem 'ffi', '1.11.1'
 gem 'devise'
-
+gem 'activeadmin', '~> 1.0.0.pre4'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 
 group :development, :test do
