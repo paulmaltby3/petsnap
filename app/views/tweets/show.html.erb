@@ -3,7 +3,7 @@
   <p id="notice"><%= notice %></p>
   
   <div class="mt-3">
-          <div class="card" style="width: 18rem;">
+          <div class="card bg-light mb-3" style="width: 18rem;">
             <div class="card-body">
               <h5 class="card-title"><%= @tweet.user.email %></h5>
               <p class="card-text"><%= @tweet.content %></p>
@@ -17,6 +17,8 @@
               <a href="#" class="card-link">           </a>
               <a href="#" class="card-link"><%= link_to 'Destroy', @tweet, method: :delete, data: { confirm: 'Are you sure?' } %></a>
               <% end %>
+              <p> </p>
+              <p><%= @tweet.created_at.strftime('%H:%M, %e %b %Y')%></p>
             </div>
           </div>
         </div>
