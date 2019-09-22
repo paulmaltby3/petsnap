@@ -2,7 +2,11 @@
   
   <p id="notice"><%= notice %></p>
   
-  <h1>Tails</h1>
+  <h1>Tails        
+    <% if user_signed_in? %>
+    <%= link_to "New Tail", new_tweet_path, class: "btn btn-info btn-lg" %>  
+    <% end %>
+  </h1>
   
     <tbody>
       <% @tweets.reverse_each do |tweet, posted| %>
