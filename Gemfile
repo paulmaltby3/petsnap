@@ -15,6 +15,7 @@ gem 'ffi', '1.11.1'
 gem 'devise'
 gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'taps', '~> 0.3.24'
 
 
 group :development, :test do
@@ -33,6 +34,7 @@ end
 
 group :production do 
   gem 'pg', '~> 1.1.4'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
