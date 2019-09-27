@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :rememberable, :validatable
          
   has_many:tweets   
+  
+  validates :username, presence: true, uniqueness: true, length: {minimum: 5}
+  validates :name, presence: true
+  
 end
