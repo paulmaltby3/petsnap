@@ -9,7 +9,7 @@
         <p></p>
   
     <% else %>
-        <% if user_signed_in? %>
+        
           <% if current_user.following?(@user) %>
               <%= link_to 'Unfollow', unfollow_user_path(@user.username), method: :delete %>
               &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  <%= link_to 'Back to all Tails', tweets_path %>
@@ -20,7 +20,7 @@
               &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  <%= link_to 'Back to all Tails', tweets_path %>
               <p></p>
           <% end %>
-        <% end %>
+      
     <% end %>
     <p></p>
     <%= image_tag("jocat.jpg", class:"img-fluid", :size => "300x190")%> 
