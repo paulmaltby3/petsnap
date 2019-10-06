@@ -16,20 +16,24 @@
               <!-- I can't make the line below link_to tweet.user.username, user_path(tweet.user.username) -->
               <!-- This used to work, but I can't work out what has changed from the earlier commit -->
               <!-- It only works locally with link_to current_user.username, user_path(current_user.username)   which is obviously wrong as it names all the tweets as the current user -->
-              <h5 class="card-title"> <%= link_to tweet.user.username, user_path(tweet.user.username) %> </h5>
-              <p class="card-text"><%= tweet.content %></p>
-              <a href="#" class="card-link"><%= link_to 'Show', tweet %></a>
-              <% if tweet.user == current_user %>
-              <a href="#" class="card-link">           </a>
-              <a href="#" class="card-link">           </a>
-              <a href="#" class="card-link"><%= link_to 'Edit', edit_tweet_path(tweet) %></a>
-              <a href="#" class="card-link">           </a>
-              <a href="#" class="card-link">           </a>
-              <a href="#" class="card-link">           </a>
-              <a href="#" class="card-link"><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></a>
+              <% if user_signed_in? %>
+                  <h5 class="card-title"> <%= link_to tweet.user.username, user_path(tweet.user.username) %> </h5>
+              <% else %>
+                  <h5 class="card-title"> <%= tweet.user.username %> </h5>
               <% end %>
-              <p> </p>
-              <p><%= tweet.created_at.strftime('%H:%M, %e %b %Y')%></p>
+                  <p class="card-text"><%= tweet.content %></p>
+                  <a href="#" class="card-link"><%= link_to 'Show', tweet %></a>
+                  <% if tweet.user == current_user %>
+                  <a href="#" class="card-link">           </a>
+                  <a href="#" class="card-link">           </a>
+                  <a href="#" class="card-link"><%= link_to 'Edit', edit_tweet_path(tweet) %></a>
+                  <a href="#" class="card-link">           </a>
+                  <a href="#" class="card-link">           </a>
+                  <a href="#" class="card-link">           </a>
+                  <a href="#" class="card-link"><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></a>
+                  <% end %>
+                  <p> </p>
+                  <p><%= tweet.created_at.strftime('%H:%M, %e %b %Y')%></p>
             </div>
           </div>
         </div>
