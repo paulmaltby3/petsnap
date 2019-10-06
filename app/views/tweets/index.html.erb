@@ -22,6 +22,9 @@
                   <h5 class="card-title"> <%= tweet.user.username %> </h5>
               <% end %>
                   <p class="card-text"><%= tweet.content %></p>
+              <% if user_signed_in? %>
+                  <a href="#" class="card-link"><%= link_to 'Show', tweet %></a>
+              <% end %>
                   <a href="#" class="card-link"><%= link_to 'Show', tweet %></a>
                   <% if tweet.user == current_user %>
                   <a href="#" class="card-link">           </a>
