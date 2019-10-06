@@ -23,52 +23,58 @@
             <p></p>
         <% end %>
     <% end %>
-     <p></p>
+    <p></p>
     <%= image_tag("jocat.jpg", class:"img-fluid", :size => "300x190")%> 
- 
     <p></p>
     <p> I dont have a pet! </p>
     
-  
     <%= link_to 'Followers: 7' %> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp 
     <%= link_to 'Following: 12' %>
     
-    <p></p>
-    <h3> <%= @user.username %>'s Tails </h3>
-    <p></p>
-    <p></p>
     
-    <tbody>
-      <% @tweets.reverse_each do |tweet, posted| %>
-        <div class="mt-3">
-          <div class="card bg-light" style="width: 18rem;">
-            <div class="card-body">
+    <% if @user == current_user %>
+    
+      <p></p>
+      <h3> Your feed:  </h3>
+      <p></p>
 
-              <p class="card-text"><%= tweet.content %></p>
-              <a href="#" class="card-link"><%= link_to 'Show', tweet %></a>
-              <% if tweet.user == current_user %>
-              <a href="#" class="card-link">           </a>
-              <a href="#" class="card-link">           </a>
-              <a href="#" class="card-link"><%= link_to 'Edit', edit_tweet_path(tweet) %></a>
-              <a href="#" class="card-link">           </a>
-              <a href="#" class="card-link">           </a>
-              <a href="#" class="card-link">           </a>
-              <a href="#" class="card-link"><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></a>
-              <% end %>
-              <p> </p>
-              <p><%= tweet.created_at.strftime('%H:%M, %e %b %Y')%></p>
+      <div class="container">
+          <% @tweets.reverse_each do |tweet, posted| %>   
+            <div class="card bg-light" style="width: 18rem;">
+                <div class="card-body">
+                    <!-- for some reason below I can't make a link_to the user :/ -->
+                    <h5 class="card-title"><%= link_to tweet.user.username, user_path(tweet.user.username) %></h5>
+                    <p class="card-text"><%= tweet.content %></p>
+                    <p><%= tweet.created_at.strftime('%H:%M, %e %b %Y')%></p>
+                </div>
+            </div>
+            <p></p>
+          <% end %>
+      </div>
+    
+    <% else %>
+      <p></p>
+      <h3> <%= @user.username %>'s Tails </h3>
+      <p></p>
+      <p></p>
+    
+      <tbody>
+        <% @tweets.reverse_each do |tweet, posted| %>
+          <div class="mt-3">
+            <div class="card bg-light" style="width: 18rem;">
+              <div class="card-body">
+  
+                <p class="card-text"><%= tweet.content %></p>
+                <a href="#" class="card-link"><%= link_to 'Show', tweet %></a>
+                <p> </p>
+                <p><%= tweet.created_at.strftime('%H:%M, %e %b %Y')%></p>
+              </div>
             </div>
           </div>
-        </div>
-      <% end %>
-    </tbody>
-  </table>
-  
+        <% end %>
+      </tbody>
+    <% end %> 
+
   <br>
 
 </div>
-    
-    
-    
-</div>
-
