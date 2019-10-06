@@ -16,6 +16,7 @@ gem 'devise'
 gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'taps', '~> 0.3.24'
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower'
 
 
 group :development, :test do

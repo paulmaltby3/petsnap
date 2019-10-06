@@ -15,7 +15,7 @@
               <a href="#" class="card-link">           </a>
               <a href="#" class="card-link">           </a>
               <a href="#" class="card-link">           </a>
-              <a href="#" class="card-link"><%= link_to 'Destroy', @tweet, method: :delete, data: { confirm: 'Are you sure?' } %></a>
+              <a href="#" class="card-link"><%= link_to 'Delete', @tweet, method: :delete, data: { confirm: 'Are you sure?' } %></a>
               <% end %>
               <p> </p>
               <p><%= @tweet.created_at.strftime('%H:%M, %e %b %Y')%></p>
