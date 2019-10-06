@@ -4,7 +4,8 @@
     <% @tweets.reverse_each do |tweet, posted| %>   
         <div class="card bg-light" style="width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title"><%= tweet.user.username %></h5>
+                <!-- for some reason below I can't make a link_to the user :/ -->
+                <h5 class="card-title"><%= link_to tweet.user.username, user_path(tweet.user.username) %></h5>
                 <p class="card-text"><%= tweet.content %></p>
                 <p><%= tweet.created_at.strftime('%H:%M, %e %b %Y')%></p>
             </div>
