@@ -1,1 +1,18 @@
-Yo yo yo petSNAP is the best!
+
+<div class="container">
+    <p></p>
+    <% @tweets.reverse_each do |tweet, posted| %>   
+        <div class="card bg-light" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title"><%= tweet.user.username %></h5>
+                <p class="card-text"><%= tweet.content %></p>
+                <p><%= tweet.created_at.strftime('%H:%M, %e %b %Y')%></p>
+            </div>
+        </div>
+        <p></p>
+    
+
+    <% end %>
+
+</div>    
+
