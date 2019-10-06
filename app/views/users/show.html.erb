@@ -35,11 +35,11 @@
     <% if @user == current_user %>
     
       <p></p>
-      <h3> Your feed:  </h3>
+      <h4> Tails from people you are following:</h4>
       <p></p>
 
       <div class="container">
-          <% @tweets.reverse_each do |tweet, posted| %>   
+          <% @tweetings.reverse_each do |tweet, posted| %>   
             <div class="card bg-light" style="width: 18rem;">
                 <div class="card-body">
                     <!-- for some reason below I can't make a link_to the user :/ -->
