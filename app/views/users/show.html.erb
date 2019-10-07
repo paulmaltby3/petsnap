@@ -25,14 +25,20 @@
     <p></p>
     <%= image_tag("jocat.jpg", class:"img-fluid", :size => "300x190")%> 
     <p></p>
-    <p> I dont have a pet! </p>
     
+    <% if @user == current_user %>
+      <h3>Your Status:</h3>
+      <p> I have a pet! So I use petSNAP!! It's GREAT!!!!!!!</p>
+    
+    <% else %>
+       <h3> <%= @user.username %>'s Status:</h3>
+       <p> I have a pet! So I use petSNAP!! It's GREAT!!!!!!!</p>
+    <% end %>      
+      
     <%= link_to 'Followers: 7' %> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp 
     <%= link_to 'Following: 12' %>
     
-    
     <% if @user == current_user %>
-    
       <p></p>
       <h3> Tails from your people:</h3>
       <p></p>
