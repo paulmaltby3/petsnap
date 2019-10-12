@@ -27,10 +27,14 @@
               <% end %>
                   <p class="card-text"><%= tweet.content %></p>
                   <p>Likes: <%= tweet.votes_for.up.size %>
-                      &nbsp &nbsp &nbsp &nbsp 
-                      <%= link_to 'Like', vote_tweet_path(tweet), method: :post %>
-                      &nbsp &nbsp &nbsp &nbsp
-                      <%= link_to 'Unlike', unvote_tweet_path(tweet), method: :delete %>
+                    <% if user_signed_in? %>
+                      &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+                      <% if current_user.voted_up_on? tweet %>
+                        <%= link_to 'Unlike', unvote_tweet_path(tweet), method: :delete %>
+                      <% else %>
+                        <%= link_to 'Like', vote_tweet_path(tweet), method: :post %>
+                      <% end %>
+                    <% end %>
                   </p>
 
                   <% if tweet.user == current_user %>
