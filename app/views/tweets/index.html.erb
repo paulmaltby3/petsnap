@@ -4,11 +4,13 @@
   
   <h1>Tails &nbsp  &nbsp  &nbsp &nbsp
     <% if user_signed_in? %>
-    <%= link_to "New Tail", new_tweet_path, class: "btn btn-info btn-lg" %>  
-  </h1>
-  <p> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <%= link_to 'Your homepage', user_path(current_user.username) %></p>
+      <%= link_to "New Tail", new_tweet_path, class: "btn btn-info btn-lg" %>  
+      </h1>
     <% end %>
- 
+  </h1>
+  <% if user_signed_in? %>
+    <p> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <%= link_to 'Your homepage', user_path(current_user.username) %></p>
+  <% end %>
   
     <tbody>
       <% @tweets.reverse_each do |tweet, posted| %>
@@ -30,7 +32,7 @@
                       &nbsp &nbsp &nbsp &nbsp
                       <%= link_to 'Unlike', unvote_tweet_path(tweet), method: :delete %>
                   </p>
-              <% end %>
+
                   <% if tweet.user == current_user %>
                   <a href="#" class="card-link">           </a>
                   <a href="#" class="card-link">           </a>
