@@ -8,9 +8,6 @@
       </h1>
     <% end %>
   </h1>
-  <% if user_signed_in? %>
-    <p> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <%= link_to 'Your homepage', user_path(current_user.username) %></p>
-  <% end %>
   
     <tbody>
       <% @tweets.reverse_each do |tweet, posted| %>
@@ -25,7 +22,9 @@
               <% else %>
                   <h5 class="card-title"> <%= tweet.user.username %> </h5>
               <% end %>
-                  <p class="card-text"><%= tweet.content %></p>
+              <p class="card-text"><%= tweet.content %></p>
+              <p><%= tweet.created_at.strftime('%H:%M, %e %b %Y')%></p>
+              
                   <p>Likes: <%= tweet.votes_for.up.size %>
                     <% if user_signed_in? %>
                       &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
@@ -47,7 +46,6 @@
                   <a href="#" class="card-link"><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></a>
                   <% end %>
                   <p> </p>
-                  <p><%= tweet.created_at.strftime('%H:%M, %e %b %Y')%></p>
             </div>
           </div>
         </div>

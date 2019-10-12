@@ -33,8 +33,10 @@
        <p> I have a pet! So I use petSNAP!! It's GREAT!!!!!!!</p>
     <% end %>      
       
-    <%= link_to 'Followers: 7' %> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-    <%= link_to 'Following: 12' %>
+    <%= link_to 'Followers: 7' %>
+    
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+    <%= link_to 'Following: 12'  %>
     
     <% if @user == current_user %>
       <p></p>
@@ -48,6 +50,7 @@
                     <!-- for some reason below I can't make a link_to the user :/ -->
                     <h5 class="card-title"><%= link_to tweet.user.username, user_path(tweet.user.username) %></h5>
                     <p class="card-text"><%= tweet.content %></p>
+                    <p><%= tweet.created_at.strftime('%H:%M, %e %b %Y')%></p>
                     <p>Likes: <%= tweet.votes_for.up.size %>
                       &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
                       <% if user_signed_in? %>
@@ -57,7 +60,6 @@
                           <%= link_to 'Like', vote_tweet_path(tweet), method: :post %>
                         <% end %>
                       <% end %>
-                    <p><%= tweet.created_at.strftime('%H:%M, %e %b %Y')%></p>
                 </div>
             </div>
             <p></p>
@@ -77,6 +79,7 @@
               <div class="card-body">
   
                 <p class="card-text"><%= tweet.content %></p>
+                <p><%= tweet.created_at.strftime('%H:%M, %e %b %Y')%></p>
                 <p>Likes: <%= tweet.votes_for.up.size %>
                   <% if user_signed_in? %>
                       &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
@@ -87,7 +90,6 @@
                       <% end %>
                   <% end %>
                 <p> </p>
-                <p><%= tweet.created_at.strftime('%H:%M, %e %b %Y')%></p>
               </div>
             </div>
           </div>
