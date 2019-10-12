@@ -28,7 +28,7 @@
                       &nbsp &nbsp &nbsp &nbsp 
                       <%= link_to 'Like', vote_tweet_path(tweet), method: :post %>
                       &nbsp &nbsp &nbsp &nbsp
-                      <%= link_to 'un-Like', unvote_tweet_path(tweet), method: :delete %>
+                      <%= link_to 'Unlike', unvote_tweet_path(tweet), method: :delete %>
                   </p>
               <% end %>
                   <% if tweet.user == current_user %>

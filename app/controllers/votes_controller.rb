@@ -4,7 +4,7 @@ class VotesController < ApplicationController
   def create
      tweet = Tweet.find(params[:id])
      tweet.liked_by current_user
-     #redirect_to user_path(current_user.username), notice: "You have successfully liked a tweet"
+     redirect_to user_path(current_user.username), notice: "You have successfully liked a tweet"
   end
   
   def destroy
