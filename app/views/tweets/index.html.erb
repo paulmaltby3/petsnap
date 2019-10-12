@@ -6,7 +6,7 @@
     <% if user_signed_in? %>
     <%= link_to "New Tail", new_tweet_path, class: "btn btn-info btn-lg" %>  
   </h1>
-  <p> &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <%= link_to 'Your homepage', user_path(current_user.username) %></p>
+  <p> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <%= link_to 'Your homepage', user_path(current_user.username) %></p>
     <% end %>
  
   
@@ -30,8 +30,6 @@
                       &nbsp &nbsp &nbsp &nbsp
                       <%= link_to 'un-Like', unvote_tweet_path(tweet), method: :delete %>
                   </p>
-              <% if user_signed_in? %>
-                  <a href="#" class="card-link"><%= link_to 'Show', tweet %></a>
               <% end %>
                   <% if tweet.user == current_user %>
                   <a href="#" class="card-link">           </a>
