@@ -5,9 +5,10 @@
   <h1>Tails &nbsp  &nbsp  &nbsp &nbsp
     <% if user_signed_in? %>
     <%= link_to "New Tail", new_tweet_path, class: "btn btn-info btn-lg" %>  
-    <p><%= link_to 'Home', user_path(current_user.username) %></p>
-    <% end %>
   </h1>
+  <p> &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <%= link_to 'Your homepage', user_path(current_user.username) %></p>
+    <% end %>
+ 
   
     <tbody>
       <% @tweets.reverse_each do |tweet, posted| %>
