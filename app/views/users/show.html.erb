@@ -26,7 +26,7 @@
     <p></p>
     
     <% if @user == current_user %>
-      <h3>Your Status: &nbsp &nbsp  <%= link_to "Edit", "#", class: "btn btn-info btn-sm" %></h3>
+      <h3>Your Status: &nbsp &nbsp  </h3>
       <p> I have a pet! So I use petSNAP!! It's GREAT!!!!!!!</p>
     <% else %>
        <h3> <%= @user.username %>'s Status:</h3>
@@ -37,6 +37,10 @@
       &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
       Following: <%= @user.followers_count %>
     </p>
+    
+    <% if @user == current_user %>
+      <%= link_to "Edit status", "#", class: "btn btn-info btn-sm" %>
+    <% end %>  
     
     <% if @user == current_user %>
       <p></p>
