@@ -105,6 +105,16 @@
   
   <% if @user == current_user %>
     <%= link_to "New Tail", new_tweet_path, class: "btn btn-info btn-lg" %>  
+  <% else %>
+    <% if current_user.following?(@user) %>
+        <%= link_to 'Back to all Tails', tweets_path %>
+        <p> </p>
+         
+      <% else %>
+        <%= link_to 'Follow', follow_user_path(@user.username), method: :post, class: "btn btn-info btn-sm" %>
+        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  <%= link_to 'Back to all Tails', tweets_path %>
+        <p></p>
+     <% end %>
   <% end %>
 
 </div>
