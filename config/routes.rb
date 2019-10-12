@@ -20,7 +20,6 @@ Rails.application.routes.draw do
       delete 'unfollow', to: 'follows#destroy'
     end
   end
-  
 
   resources :tweets do
     member do
