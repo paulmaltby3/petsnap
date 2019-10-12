@@ -33,10 +33,10 @@
        <p> I have a pet! So I use petSNAP!! It's GREAT!!!!!!!</p>
     <% end %>      
       
-    <%= link_to 'Followers: 7' %>
-    
-    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-    <%= link_to 'Following: 12'  %>
+    <p>Follows: <%= @user.follow_count %> 
+      &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+      Following: <%= @user.followers_count %>
+    </p>
     
     <% if @user == current_user %>
       <p></p>
