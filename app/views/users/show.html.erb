@@ -9,7 +9,6 @@
         <p></p>
   
     <% else %>
-        
           <% if current_user.following?(@user) %>
               <%= link_to 'Unfollow', unfollow_user_path(@user.username), method: :delete %>
               &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  <%= link_to 'Back to all Tails', tweets_path %>
@@ -20,22 +19,21 @@
               &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  <%= link_to 'Back to all Tails', tweets_path %>
               <p></p>
           <% end %>
-      
     <% end %>
+    
     <p></p>
     <%= image_tag("jocat.jpg", class:"img-fluid", :size => "300x190")%> 
     <p></p>
     
     <% if @user == current_user %>
-      <h3>Your Status:</h3>
+      <h3>Your Status: &nbsp &nbsp  <%= link_to "Edit", "#", class: "btn btn-info btn-sm" %></h3>
       <p> I have a pet! So I use petSNAP!! It's GREAT!!!!!!!</p>
-    
     <% else %>
        <h3> <%= @user.username %>'s Status:</h3>
        <p> I have a pet! So I use petSNAP!! It's GREAT!!!!!!!</p>
     <% end %>      
       
-    <%= link_to 'Followers: 7' %> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp 
+    <%= link_to 'Followers: 7' %> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
     <%= link_to 'Following: 12' %>
     
     <% if @user == current_user %>
@@ -50,6 +48,12 @@
                     <!-- for some reason below I can't make a link_to the user :/ -->
                     <h5 class="card-title"><%= link_to tweet.user.username, user_path(tweet.user.username) %></h5>
                     <p class="card-text"><%= tweet.content %></p>
+                    <p>Likes: <%= tweet.votes_for.up.size %>
+                      &nbsp &nbsp &nbsp &nbsp 
+                      <%= link_to 'Like', vote_tweet_path(tweet), method: :post %>
+                      &nbsp &nbsp &nbsp &nbsp
+                      <%= link_to 'un-Like', unvote_tweet_path(tweet), method: :delete %>
+                    </p>
                      <a href="#" class="card-link"><%= link_to 'Show', tweet %></a>
                     <p><%= tweet.created_at.strftime('%H:%M, %e %b %Y')%></p>
                 </div>
@@ -71,6 +75,12 @@
               <div class="card-body">
   
                 <p class="card-text"><%= tweet.content %></p>
+                <p>Likes: <%= tweet.votes_for.up.size %>
+                  &nbsp &nbsp &nbsp &nbsp 
+                  <%= link_to 'Like', vote_tweet_path(tweet), method: :post %>
+                  &nbsp &nbsp &nbsp &nbsp
+                  <%= link_to 'un-Like', unvote_tweet_path(tweet), method: :delete %>
+                </p>
                 <a href="#" class="card-link"><%= link_to 'Show', tweet %></a>
                 <p> </p>
                 <p><%= tweet.created_at.strftime('%H:%M, %e %b %Y')%></p>
