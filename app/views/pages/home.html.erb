@@ -10,20 +10,21 @@
             <div class="col-md-4">
                 <h2>Explore</h2>
                 <p>See what other petSNAP users are talking about</p>
-                <p><%= link_to "View all Tails", tweets_path, class: "btn btn-secondary" %></p>
+                <p><%= link_to "View all Tails", tweets_path, class: "btn btn-info" %></p>
             </div>
             <div class="col-md-4">
                  <h2>Share</h2>
                 <p>Update us with daily pics and 'tails' about your pets with your family, friends and like minded animal lovers</p>
-                <p><%= link_to "New Tail", new_tweet_path, class: "btn btn-secondary" %></p>
+                <p><%= link_to "New Tail", new_tweet_path, class: "btn btn-info" %></p>
             </div>
             <div class="col-md-4">
                <h2>Home</h2>
                 <p> Update your status with your pet's latest hilarious habits and see Tails from the people you follow </p>
-                <p><%= link_to "Your Homepage", user_path(current_user.username), class: "btn btn-secondary" %></p>
+                <p><%= link_to "Your Homepage", user_path(current_user.username), class: "btn btn-info" %></p>
             </div>
         </div>
     </div>
+
 <% else %>
     <div class="jumbotron jumbotron-home">
         <div class="container">

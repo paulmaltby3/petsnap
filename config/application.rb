@@ -14,3 +14,8 @@ module Omrails
     config.app_generators.scaffold_controller = :scaffold_controller
   end
 end
+
+class Application < Rails::Application
+  config.time_zone = 'London' 
+  config.active_record.default_timezone = :local
+end

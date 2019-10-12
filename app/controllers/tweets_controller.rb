@@ -25,7 +25,7 @@ class TweetsController < ApplicationController
   def create
     @tweet = current_user.tweets.new(tweet_params)
     if @tweet.save
-      redirect_to @tweet, notice: 'Tweet was successfully created.'
+      redirect_to @tweet, notice: 'Tail was successfully created.'
     else
       render :new 
     end
@@ -35,7 +35,7 @@ class TweetsController < ApplicationController
   def update
     @tweet = current_user.tweets.find(params[:id])
     if @tweet.update(tweet_params)
-      redirect_to @tweet, notice: 'Tweet was successfully updated.'
+      redirect_to @tweet, notice: 'Tail was successfully updated.'
     else
       render :edit
     end
@@ -45,7 +45,7 @@ class TweetsController < ApplicationController
   def destroy
     @tweet = current_user.tweets.find(params[:id])
     @tweet.destroy
-    redirect_to tweets_url, notice: 'Tweet was successfully destroyed.'
+    redirect_to tweets_url, notice: 'Tail was successfully destroyed.'
   end
 
   private
