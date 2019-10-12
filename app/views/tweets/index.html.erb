@@ -5,6 +5,7 @@
   <h1>Tails &nbsp  &nbsp  &nbsp &nbsp
     <% if user_signed_in? %>
     <%= link_to "New Tail", new_tweet_path, class: "btn btn-info btn-lg" %>  
+    <p><%= link_to 'Home', user_path(current_user.username) %></p>
     <% end %>
   </h1>
   
@@ -22,6 +23,12 @@
                   <h5 class="card-title"> <%= tweet.user.username %> </h5>
               <% end %>
                   <p class="card-text"><%= tweet.content %></p>
+                  <p>Likes: <%= tweet.votes_for.up.size %>
+                      &nbsp &nbsp &nbsp &nbsp 
+                      <%= link_to 'Like', vote_tweet_path(tweet), method: :post %>
+                      &nbsp &nbsp &nbsp &nbsp
+                      <%= link_to 'un-Like', unvote_tweet_path(tweet), method: :delete %>
+                  </p>
               <% if user_signed_in? %>
                   <a href="#" class="card-link"><%= link_to 'Show', tweet %></a>
               <% end %>
