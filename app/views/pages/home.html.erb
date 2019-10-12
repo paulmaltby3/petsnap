@@ -58,14 +58,14 @@
 <p></p>
 <p></p>
 <div class='container'>
-    <h2>Tails</h2>
-        <% @followings.reverse_each do |tweet, posted| %>   
-            <div class="card bg-light" style="width: 18rem;">
-                <div class="card-body">
-                    <p class="card-text"><%= tweet.content %></p>
-                    <p><%= tweet.created_at.strftime('%H:%M, %e %b %Y')%></p>
-                </div>
-            </div>
+    <!--<h2>Tails</h2>
+        <!-- @followings.reverse_each do |tweet, posted| %>  --> 
+            <!--<div class="card bg-light" style="width: 18rem;">
+                <!--<div class="card-body">
+                    <!--<p class="card-text"><!-- tweet.content %></p>
+                    <!--<p><!-- tweet.created_at.strftime('%H:%M, %e %b %Y')%></p>
+                <!--</div>
+            <!--</div>
             <p></p>
-        <% end %>
+        <!-- end %>
 </div>
