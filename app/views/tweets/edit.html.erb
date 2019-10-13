@@ -6,7 +6,8 @@
     <p></p>
     <p></p>
     <p></p>
-    <%= link_to 'Delete', tweet: @tweet, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Delete', @tweet, method: :delete, data: { confirm: 'Are you sure?' } %>
+    
     &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
     <%= link_to 'Back to Tails', tweets_path %>
     
