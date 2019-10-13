@@ -38,7 +38,6 @@
 
                   <% if tweet.user == current_user %>
                   <a href="#" class="card-link"><%= link_to 'Edit', edit_tweet_path(tweet) %></a>      
-                  <a href="#" class="card-link"><%= link_to 'Delete', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></a> 
                   <% end %>
                   <p> </p>
             </div>
