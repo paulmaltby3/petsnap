@@ -1,16 +1,24 @@
 <div class='container'>
     <p></p>
     <h1>Editing Tail</h1>
-    
+    <div class="card bg-light mb-3" style="width: 18rem;">
+        <div class="card-body" >
+            <center><%= image_tag @tweet.image, class: "img-fluid", 
+                src: ' ',
+                onerror: "this.style.display='none'"
+              %></center>
+            %></center>
+        </div>
+    </div>
+    <p> </p>
     <%= render 'form', tweet: @tweet %>
     <p></p>
     <p></p>
     <p></p>
-    <%= link_to 'Delete', @tweet, method: :delete, data: { confirm: 'Are you sure?' } %>
-    
-    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
     <%= link_to 'Back to Tails', tweets_path %>
-    
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    <%= link_to 'Delete', @tweet, method: :delete, data: { confirm: 'Are you sure?' } %>
+
 
     
 </div>
