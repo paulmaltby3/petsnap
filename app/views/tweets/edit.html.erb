@@ -4,6 +4,10 @@
     
     <%= render 'form', tweet: @tweet %>
     <p></p>
+    <%= link_to 'Delete', tweet, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <p></p>
     <%= link_to 'Back', tweets_path %>
+    
+
     
 </div>

@@ -8,4 +8,15 @@
     <div class="container">
     <%= image_tag("dogpic.jpg", class: "img-fluid")%> <!-- :size => "800x500",  image creative commons via https://www.flickr.com/photos/120866016@N08/22448748385/in/photolist-AcHGMX-Q4yKMR-h1HYth-2buQvJW-5m6zu-2dPKrNX-RFSapy-5tJ18y-24KKseb-SWpxEp-2dPKosi-qGTV-dgybdX-2cHNY85-9a6VSN-e1ctpa-7NmdGx-x9Rnzw-8uLCEK-TjyjCu-27RwMqY-83d4v3-83dbnY-2b4b2aU-23pnKjD-28F3Les-aZdwwk-usEQgq-cGygjh-9ArATa-9ZiFee-gYevJn-oHscv7-vQ7gN-23NDX3L-dhn55-pexaR-PxCdr7-a1ZNpj-RFSceL-cAKgDL-3bgHMT-mkA8gW-pnsFk-zezo1-9chkcQ-6JKi63-21zXMxC-dhnCPz-2eckssT-->
     </div>
+    
+    <div class='container'>   
+        <% if user_signed_in? %>
+           <p></p>  
+        <% else %>
+            <p></p>
+            <%= link_to "Sign up now!", signup_path, class: "btn btn-info btn-lg" %>  
+            &nbsp &nbsp &nbsp &nbsp 
+            <%= link_to "Or log in", login_path %> 
+        <% end %>
+    </div>     
 </div>
